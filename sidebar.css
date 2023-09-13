@@ -1,0 +1,87 @@
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+*{
+    box-sizing: border-box;
+}
+
+.header{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #ff9f43;
+    z-index: 10;
+    top: 0;
+    left: 0;
+}
+.main{
+    height: 100%;
+    margin-top: 50px;
+    padding: 10px 50px;
+}
+
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    margin-top: 50px;
+    background-color: #1dd1a1;
+    left: 0;
+    top: 0;
+    transform: translateX(-250px);
+    transition: transform 500ms ease-in-out;
+}
+
+.sidebar ul{
+    padding: 10px;
+
+}
+
+.sidebar ul li{
+    padding: 10px;
+    text-decoration: none;
+    border-bottom: 2px solid rgb(255, 255, 255, 0.30);
+}
+
+
+#inputsidebartoggle:checked ~ .sidebar{
+  transform: translateX(0px);
+}
+
+.spinner.middle,.spinner.last{
+    margin-top: 3px;
+    
+}
+
+.sidebaricon{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 15px;
+    top:  10px;
+    z-index: 20;
+    /* background-color: white;  */
+    cursor: pointer;
+}
+
+.spinner{
+    height: 3px;
+    background: white;
+    transition: all 0.3s;
+}
+
+#inputsidebartoggle:checked ~ .sidebaricon > .spinner.spinner.middle{
+    opacity: 0;
+}
+
+#inputsidebartoggle:checked ~ .sidebaricon > .spinner.spinner.top{
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+#inputsidebartoggle:checked ~ .sidebaricon > .spinner.spinner.last{
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
